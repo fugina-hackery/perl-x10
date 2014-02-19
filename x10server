@@ -1,0 +1,65 @@
+#!/usr/local/bin/perl
+
+use strict;
+
+use X10;
+
+my $debug = @ARGV ? 1 : 0;
+
+my $x10 = new X10(
+	controller_type => 'X10::TwoWay',
+	controller_port => '/dev/twoway',
+	server_port => 0,		# use default
+	macroconfig => 'macros.config',
+	schedulerconfig => 'scheduler.config',
+	devices => 'devices.x10',
+	debug => $debug,
+	# verbose => 1,
+	);
+
+if ($x10)
+{
+   &daemonize unless $debug;
+   $x10->run;
+}
+else
+{
+   print STDERR "Error configuring X10\n";
+}
+
+exit;
+
+use Carp;
+use POSIX;
+
+sub daemonize
+{
+   ## Fork and exit parent
+   exit 0 if (fork);
+
+   ## Detach ourselves from the terminal
+   croak "Cannot detach from controlling terminal"
+       unless POSIX::setsid();
+
+   ## Prevent possibility of acquiring a controling terminal
+   $SIG{'HUP'} = 'IGNORE';
+   exit 0 if (fork);
+
+   ## Change working directory
+   chdir "/";
+
+   ## Clear file creation mask
+   umask 0;
+
+   ## Close open file descriptors
+   # foreach my $i (0 .. OpenMax) { POSIX::close($i); }
+
+   ## Reopen stderr, stdout, stdin to /dev/null
+   open(STDIN,  "+>/dev/null");
+   open(STDOUT, "+>&STDIN");
+   open(STDERR, "+>&STDIN");
+
+   0;
+}
+
+

@@ -1,0 +1,6 @@
+/dev/ttyS0: FireCracker
+/dev/ttySA: TwoWay (also /dev/x10)
+/dev/ttySB: Bedroom Terminal
+/dev/ttySC: Callerid Modem
+/dev/ttySD: QPage Paging
+/dev/ttySE: ActiveHome

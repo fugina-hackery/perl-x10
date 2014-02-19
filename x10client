@@ -1,0 +1,25 @@
+#!/usr/local/bin/perl
+
+use File::Basename;
+
+# this works as long as it's not called through a symlink...
+use lib (dirname $0);
+
+use X10::EventList;
+use X10::Network;
+
+die "No events given\n" unless @ARGV;
+
+my $eventlist = new X10::EventList(@ARGV);
+
+my $x10 = new X10::Network( server => 'x10' );
+
+unless ($x10)
+{
+   warn "Couldn't connect to X10 controller";
+   exit;
+}
+
+$x10->send( $eventlist );
+
+
