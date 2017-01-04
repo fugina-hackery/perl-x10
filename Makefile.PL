@@ -15,13 +15,6 @@ WriteMakefile(
       Storable => 0,
       Time::ParseDate => 0,
     },
-  INSTALLDIRS => 'site',
-  dist =>
-    {
-      # PREOP        => 'pod2text lib/CPAN/WAIT.pm > README;',
-      DIST_DEFAULT => 'tardist',
-      COMPRESS     => 'gzip -9f'
-    },
   EXE_FILES => [ qw(x10server x10client) ],
   LICENSE => 'gpl_3',
 );
