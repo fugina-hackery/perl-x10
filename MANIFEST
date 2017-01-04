@@ -17,7 +17,6 @@ X10/SchedEvent.pm
 X10/Scheduler.pm
 X10/Server.pm
 X10/TwoWay.pm
-devices
 macros.config
 scheduler.config
 test.pl
