@@ -19,7 +19,6 @@ X10/Server.pm
 X10/TwoWay.pm
 devices
 macros.config
-ports
 scheduler.config
 test.pl
 x10client
