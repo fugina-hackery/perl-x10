@@ -3,7 +3,6 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
   NAME => 'X10',
   VERSION_FROM => 'X10.pm',
-  PMLIBDIRS => [ qw{.} ],
   PREREQ_PM =>
     {
       Astro::SunTime => 0.01,
