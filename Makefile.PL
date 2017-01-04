@@ -24,5 +24,6 @@ WriteMakefile(
       COMPRESS     => 'gzip -9f'
     },
   EXE_FILES => [ qw(x10server x10client) ],
+  LICENSE => 'gpl_3',
 );
 
