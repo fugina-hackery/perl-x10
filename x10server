@@ -3,6 +3,35 @@
 # Copyright (c) 1999-2017 Rob Fugina <robf@fugina.com>
 # Distributed under the terms of the GNU Public License, Version 3.0
 
+=head1 NAME
+
+x10server - creates a server used to receive events from an x10 client 
+
+=head1 USAGE
+
+Usage:
+
+    x10server [options]
+     
+Where options are:
+
+    1 - turn debug output on
+    0 - turn debug output off
+
+=head1 DESCRIPTION
+
+When called, x10server will fork into the background unless the debug flag is
+set. By default the server looks for a TwoWay controller at /dev/twoway. It
+looks for a file called macros.config for macro definitions, a file called 
+scheduler.config for scheduler definitions, and a file called devices.x10 for
+a list of x10 devices.
+
+=head1 AUTHOR
+
+Rob Fugina <robf@fugina.com>
+
+=cut
+
 use strict;
 
 use X10;
