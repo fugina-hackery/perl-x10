@@ -1,3 +1,7 @@
+
+# Copyright (c) 1999-2017 Rob Fugina <robf@fugina.com>
+# Distributed under the terms of the GNU Public License, Version 3.0
+
 package X10;
 
 use Data::Dumper;
@@ -15,7 +19,7 @@ use X10::Server;
 
 use vars qw($VERSION);
 
-$VERSION = 0.03;
+$VERSION = 0.04;
 
 sub new
 {

@@ -1,3 +1,7 @@
+
+# Copyright (c) 1999-2017 Rob Fugina <robf@fugina.com>
+# Distributed under the terms of the GNU Public License, Version 3.0
+
 package X10::Server;
 
 # this is a network server object that accepts connections via a TCP
