@@ -8,20 +8,27 @@ use Module::Build;
 my $build = Module::Build->new
   (
    module_name => 'X10',
+   dist_abstract => 'A suite of modules for X10 home automation',
    dist_version_from => 'lib/X10.pm',
+   script_files => [ 'scripts/x10client', 'scripts/x10server' ],
    requires => {
-                 'Astro::SunTime' => '0.01',
-                 'Device::SerialPort' => 0,
-                 'File::Basename' => 0,
-                 'FileHandle' => 0,
-                 'IO::Select' => 0,
-                 'IO::Socket' => 0,
-                 'POSIX' => 0,
-                 'Storable' => 0,
-                 'Time::ParseDate' => 0
+      'Astro::SunTime' => '0.01',
+      'Device::SerialPort' => 0,
+      'File::Basename' => 0,
+      'FileHandle' => 0,
+      'IO::Select' => 0,
+      'IO::Socket' => 0,
+      'POSIX' => 0,
+      'Storable' => 0,
+      'Time::ParseDate' => 0,
+      },
+   configure_requires => {
+      'Module::Build' => 0,
+      },
    license => 'gpl_3',
    create_readme => 1,
    create_makefile_pl => 'traditional',
+   add_to_cleanup => [ 'X10-*' ],
   );
 
 $build->create_build_script;

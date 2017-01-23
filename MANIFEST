@@ -20,6 +20,6 @@ lib/X10/Server.pm
 lib/X10/TwoWay.pm
 macros.config
 scheduler.config
+scripts/x10client
+scripts/x10server
 test.pl
-x10client
-x10server
